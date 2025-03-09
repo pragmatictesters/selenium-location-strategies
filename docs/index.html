@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo Store - Selenium Location Strategies</title>
+    <title>Demo Store - Login</title>
     <link rel="stylesheet" href="styles.css">
     <script>
         function validateLogin(event) {
@@ -15,16 +15,15 @@
           // Clear previous message
           loginMessage.innerHTML = '';
 
-          // Check for blank username or password
+          // Validate blank inputs
           if (username === '' || password === '') {
             loginMessage.innerHTML = 'Username and password are required.';
             loginMessage.style.color = 'red';
           }
-          // Check for valid credentials
+          // Validate credentials
           else if (username === 'pragmatic' && password === 'secret') {
-            window.location.href = 'product-page.html'; // Redirect to product page
-          }
-          else {
+            window.location.href = 'product-page.html'; // Redirect on successful login
+          } else {
             loginMessage.innerHTML = 'Invalid username or password.';
             loginMessage.style.color = 'red';
           }
@@ -32,36 +31,24 @@
     </script>
 </head>
 <body>
+<div class="login-container">
+    <div class="login-box">
+        <img src="ptl-logo.png" alt="Pragmatic Testers Logo" class="logo">
+        <form onsubmit="validateLogin(event)">
+            <input type="text" id="username" name="username" placeholder="Username">
+            <input type="password" id="password" name="password" placeholder="Password">
+            <button type="submit">Sign In</button>
+        </form>
+        <p id="loginMessage"></p>
+    </div>
+</div>
 
-<header>
-    <img src="ptl-logo.png" alt="Pragmatic Testers Logo" class="logo">
-    <h1>Welcome to Demo Store</h1>
-    <nav>
-        <ul>
-            <li><a href="https://pragmatictestlabs.com" target="_blank" class="nav-link">Home</a></li>
-            <li><a href="about.html" class="nav-link">About</a></li>
-            <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-
-<main>
-    <section id="login" class="login-section">
-        <h2>Login</h2>
-        <div class="form-container">
-            <form onsubmit="validateLogin(event)">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" placeholder="Enter username">
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Enter password">
-
-                <button type="submit">Login</button>
-            </form>
-        </div>
-        <p id="loginMessage"></p> <!-- Login validation messages -->
-    </section>
-</main>
-
+<footer>
+    <ul class="footer-nav">
+        <li><a href="https://pragmatictestlabs.com" target="_blank">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</footer>
 </body>
 </html>
