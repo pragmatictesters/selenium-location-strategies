@@ -11,18 +11,13 @@
           const username = document.getElementById('username').value;
           const password = document.getElementById('password').value;
           const loginMessage = document.getElementById('loginMessage');
-
-          // Clear previous message
           loginMessage.innerHTML = '';
 
-          // Validate blank inputs
           if (username === '' || password === '') {
             loginMessage.innerHTML = 'Username and password are required.';
             loginMessage.style.color = 'red';
-          }
-          // Validate credentials
-          else if (username === 'pragmatic' && password === 'secret') {
-            window.location.href = 'product-page.html'; // Redirect on successful login
+          } else if (username === 'pragmatic' && password === 'secret') {
+            window.location.href = 'product-page.html';
           } else {
             loginMessage.innerHTML = 'Invalid username or password.';
             loginMessage.style.color = 'red';
@@ -35,14 +30,15 @@
     <div class="login-box">
         <img src="ptl-logo.png" alt="Pragmatic Testers Logo" class="logo">
         <form onsubmit="validateLogin(event)">
+            <label for="username">Username:</label>
             <input type="text" id="username" name="username" placeholder="Username">
+            <label for="password">Password:</label>
             <input type="password" id="password" name="password" placeholder="Password">
             <button type="submit">Sign In</button>
         </form>
         <p id="loginMessage"></p>
     </div>
 </div>
-
 <footer>
     <ul class="footer-nav">
         <li><a href="https://pragmatictestlabs.com" target="_blank">Home</a></li>
