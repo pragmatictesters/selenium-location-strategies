@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Store - Selenium Location Strategies</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function validateLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const loginMessage = document.getElementById('loginMessage');
+
+            // Clear previous message
+            loginMessage.innerHTML = '';
+
+            // Check for blank username or password
+            if (username === '' || password === '') {
+                loginMessage.innerHTML = 'Username and password are required.';
+                loginMessage.style.color = 'red';
+            }
+            // Check for valid credentials
+            else if (username === 'pragmatic' && password === 'secret') {
+                window.location.href = 'product-page.html'; // Redirect to product page
+            }
+            else {
+                loginMessage.innerHTML = 'Invalid username or password.';
+                loginMessage.style.color = 'red';
+            }
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <img src="ptl-logo.png" alt="Pragmatic Testers Logo" class="logo">
+    <h1>Welcome to Demo Store</h1>
+    <nav>
+        <ul>
+            <li><a href="https://pragmatictestlabs.com" target="_blank" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="login" class="login-section">
+        <h2>Login</h2>
+        <form onsubmit="validateLogin(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter username">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter password">
+
+            <button type="submit">Login</button>
+        </form>
+        <p id="loginMessage"></p> <!-- Login validation messages -->
+    </section>
+</main>
+
+</body>
+</html>
