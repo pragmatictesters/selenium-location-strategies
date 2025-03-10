@@ -34,6 +34,13 @@ public class FindAllExampleTest {
         PageFactory.initElements(driver, this);
     }
 
+    @AfterMethod(alwaysRun = true)
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
     @Test
     public void testFindAllElements() {
         Assert.assertFalse(allElements.isEmpty(), "Expected at least one element to be found using FindAll.");
@@ -70,10 +77,5 @@ public class FindAllExampleTest {
         Assert.assertEquals(paragraphs, 1, "Number of p elements mismatch");
     }
 
-    @AfterMethod
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+
 }
