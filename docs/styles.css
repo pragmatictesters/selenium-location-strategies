@@ -157,3 +157,14 @@ footer {
 .add-to-cart-btn:hover {
   background-color: #2ecc71;
 }
+
+.label-class {
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+    margin-right: 10px;
+}
+
+.username-class, .password-class {
+    margin-bottom: 10px;
+}

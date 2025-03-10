@@ -30,8 +30,10 @@
     <div class="login-box">
         <img src="ptl-logo.png" alt="Pragmatic Testers Logo" class="logo">
         <form onsubmit="validateLogin(event)">
-            <input type="text" id="username" name="username" placeholder="Username" class="username-class">
-            <input type="password" id="password" name="password" placeholder="Password" class="password-class">
+            <label for="username" class="label-class">Username:</label>
+            <input type="text" id="username" name="username" class="username-class">
+            <label for="password" class="label-class">Password:</label>
+            <input type="password" id="password" name="password" class="password-class">
             <button type="submit" id="loginButton" name="loginButton" class="btn__primary--large login-button-class">Sign In</button>
         </form>
         <div class="extra-links">
