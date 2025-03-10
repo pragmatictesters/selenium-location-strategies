@@ -18,6 +18,7 @@ public class ByTagNameExampleTest {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://pragmatictesters.github.io/selenium-location-strategies/index.html");
+        driver.manage().window().maximize();
     }
 
     @AfterClass (alwaysRun = true)

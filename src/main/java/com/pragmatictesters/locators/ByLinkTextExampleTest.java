@@ -17,6 +17,7 @@ public class ByLinkTextExampleTest {
     public void setUp() {
         driver = new ChromeDriver();
         driver.get("https://pragmatictesters.github.io/selenium-location-strategies/index.html");
+        driver.manage().window().maximize();
     }
 
 

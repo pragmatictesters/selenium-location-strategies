@@ -20,6 +20,15 @@ public class ByClassNameExampleTest {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://pragmatictesters.github.io/selenium-location-strategies/index.html");
+        driver.manage().window().maximize();
+    }
+
+
+    @AfterClass(alwaysRun = true)
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
     @Test
@@ -41,10 +50,5 @@ public class ByClassNameExampleTest {
         Assert.assertTrue(productPageHeader.isDisplayed(), "Login failed or product page not loaded.");
     }
 
-    @AfterClass
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+
 }

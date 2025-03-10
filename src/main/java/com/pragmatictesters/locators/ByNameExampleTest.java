@@ -18,6 +18,7 @@ public class ByNameExampleTest {
         driver = new ChromeDriver();
         String demoURL = "https://pragmatictesters.github.io/selenium-location-strategies/index.html";
         driver.get(demoURL);
+        driver.manage().window().maximize();
     }
 
 

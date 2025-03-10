@@ -17,9 +17,10 @@ public class ByPartialLinkTextExampleTest {
     public void setUp() {
         driver = new ChromeDriver();
         driver.get("https://pragmatictesters.github.io/selenium-location-strategies/index.html");
+        driver.manage().window().maximize();
     }
 
-    @Test
+    @Test(alwaysRun = true)
     public void testPartialLinkText() {
         // Locate the link using partial link text
         WebElement link = driver.findElement(By.partialLinkText("Forgot"));
