@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Selenium Locators Test Suite">
+    <test name="Locator Tests">
+        <classes>
+            <!-- Test Classes -->
+            <class name="com.pragmatictesters.locators.ByClassNameExampleTest"/>
+            <class name="com.pragmatictesters.locators.ByCSSExampleTest"/>
+            <class name="com.pragmatictesters.locators.ByIDExampleTest"/>
+            <class name="com.pragmatictesters.locators.ByLinkTextExampleTest"/>
+            <class name="com.pragmatictesters.locators.ByNameExampleTest"/>
+            <class name="com.pragmatictesters.locators.ByPartialLinkTextExampleTest"/>
+            <class name="com.pragmatictesters.locators.ByTagNameExampleTest"/>
+            <class name="com.pragmatictesters.locators.ByXPathExampleTest"/>
+            <class name="com.pragmatictesters.locators.CustomLocatorExample"/>
+            <class name="com.pragmatictesters.locators.FindAllExampleTest"/>
+            <class name="com.pragmatictesters.locators.FindByExampleTest"/>
+            <class name="com.pragmatictesters.locators.FindBysExampleTest"/>
+            <class name="com.pragmatictesters.locators.JavaScriptLocatorExampleTest"/>
+            <class name="com.pragmatictesters.locators.RelativeLocatorsExampleTest"/>
+        </classes>
+    </test>
+</suite>
