@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
 <suite name="Selenium Locators Test Suite">
-    <test name="Locator Tests">
+    <test name="Locator Tests" enabled="false" >
         <classes>
             <!-- Test Classes -->
             <class name="com.pragmatictesters.locators.ByClassNameExampleTest"/>
@@ -11,12 +12,25 @@
             <class name="com.pragmatictesters.locators.ByPartialLinkTextExampleTest"/>
             <class name="com.pragmatictesters.locators.ByTagNameExampleTest"/>
             <class name="com.pragmatictesters.locators.ByXPathExampleTest"/>
-            <class name="com.pragmatictesters.locators.CustomLocatorExample"/>
+            <class name="com.pragmatictesters.locators.CustomLocatorExampleTest"/>
             <class name="com.pragmatictesters.locators.FindAllExampleTest"/>
             <class name="com.pragmatictesters.locators.FindByExampleTest"/>
             <class name="com.pragmatictesters.locators.FindBysExampleTest"/>
             <class name="com.pragmatictesters.locators.JavaScriptLocatorExampleTest"/>
             <class name="com.pragmatictesters.locators.RelativeLocatorsExampleTest"/>
+            <class name="com.pragmatictesters.locators.ByCssOrXpathExampleTest"/>
+            <class name="com.pragmatictesters.locators.ByIdOrNameExampleTest"/>
         </classes>
     </test>
+
+    <test name="Locators-testsuite-run-all-tests-in-the-package">
+            <packages>
+                <package name="com.pragmatictesters.locators"/>
+            </packages>
+
+    </test>
+
+
+
+
 </suite>
