@@ -19,6 +19,11 @@ public class ByCSSExampleTest {
         driver.get("https://pragmatictesters.github.io/selenium-location-strategies/index.html");
     }
 
+    @AfterMethod(alwaysRun = true)
+    public void tearDown() {
+        driver.quit();
+    }
+
     @Test
     public void testCSSSelectors() {
         // ID Selector
@@ -98,8 +103,5 @@ public class ByCSSExampleTest {
         softAssert.assertAll();
     }
 
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
+
 }

@@ -23,7 +23,7 @@ public class CustomLocatorExample {
 
     }
 
-    @AfterMethod
+    @AfterMethod (alwaysRun = true)
     public void afterMethod() {
         webDriver.close();
     }
