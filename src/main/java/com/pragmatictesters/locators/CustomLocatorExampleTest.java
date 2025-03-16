@@ -4,7 +4,6 @@ import com.pragmatic.selenium.support.ByAttributeValue;
 import com.pragmatic.selenium.support.ByPartialText;
 import com.pragmatic.selenium.support.ByText;
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,6 +19,8 @@ public class CustomLocatorExampleTest {
     @BeforeMethod
     public void beforeMethod() {
         webDriver = new ChromeDriver();
+        webDriver.manage().window().maximize();
+        webDriver.get("https://pragmatictesters.github.io/selenium-location-strategies/javascript-popups.html");
 
     }
 
@@ -31,38 +32,29 @@ public class CustomLocatorExampleTest {
     @Test
     public void testLocateElementByAttributeAndValue() {
         // Locate the first checkbox
-        webDriver.get("https://www.selenium.dev/selenium/web/web-form.html");
-        WebElement eleTextBox = webDriver.findElement(new ByAttributeValue("myprop", "myvalue"));
-        Assert.assertEquals(eleTextBox.getDomProperty("id"), "my-text-id");
-
+        WebElement eleTextBox = webDriver.findElement(new ByAttributeValue("id", "nameInput"));
+        Assert.assertEquals(eleTextBox.getDomProperty("placeholder"), "John Doe");
     }
 
 
     @Test
     public void testLocateElementsByText(){
-        webDriver.get("https://the-internet.herokuapp.com/javascript_alerts");
-        webDriver.findElement(new ByText("Click for JS Alert")).click();
+        webDriver.findElement(new ByText("Show Alert")).click();
         Alert alert = webDriver.switchTo().alert();
 
-        Assert.assertEquals(alert.getText(), "I am a JS Alert");
+        Assert.assertEquals(alert.getText(), "This is a simple alert!");
         alert.accept(); //Clicking OK button in the alert
-
-        Assert.assertEquals(webDriver.findElement(By.id("result")).getText(), "You successfully clicked an alert");
     }
 
 
     @Test
     public void testLocateElementsByPartialText(){
-        webDriver.get("https://the-internet.herokuapp.com/javascript_alerts");
-        webDriver.findElement(new ByPartialText("JS Alert")).click();
+
+        webDriver.findElement(new ByPartialText("Alert")).click();
         Alert alert = webDriver.switchTo().alert();
 
-        Assert.assertEquals(alert.getText(), "I am a JS Alert");
+        Assert.assertEquals(alert.getText(), "This is a simple alert!");
         alert.accept(); //Clicking OK button in the alert
-
-        Assert.assertEquals(webDriver.findElement(By.id("result")).getText(), "You successfully clicked an alert");
-        webDriver.findElement(new ByPartialText("for JS Alert")).click();
-        webDriver.switchTo().alert().accept();
     }
 
 }
